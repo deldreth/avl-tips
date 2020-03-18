@@ -1,0 +1,41 @@
+service: avl-tips-server
+
+app: avl-tips
+org: deldreth
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  profile: default
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+        - s3:GetObject
+      Resource: "arn:aws:s3:::avl-tips-employee/*"
+
+functions:
+  getEmployee:
+    handler: lib/employees.getEmployee
+    events:
+      - http:
+          path: employee
+          method: get
+
+resources:
+  Resources:
+    EmployeeCacheBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: avl-tips-employee
+        CorsConfiguration:
+          CorsRules:
+            - AllowedOrigins:
+                - "*"
+              AllowedHeaders:
+                - "*"
+              AllowedMethods:
+                - GET
+                - PUT
+                - POST
+              MaxAge: 5000
