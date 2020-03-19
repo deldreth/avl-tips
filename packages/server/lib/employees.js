@@ -55,7 +55,7 @@ async function getEmployee(event) {
     const set = await sheets.spreadsheets.values.update({
       auth,
       spreadsheetId: SHEETS_SPREADSHEET_ID,
-      range: "M20",
+      range: "'Sheet1'!B1",
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [[Math.random()]]
@@ -69,18 +69,38 @@ async function getEmployee(event) {
     } = await sheets.spreadsheets.values.get({
       auth,
       spreadsheetId: SHEETS_SPREADSHEET_ID,
-      range: "M22"
+      range: "'Sheet1'!B3"
     });
+
+    if (randomRowIndex === "#NUM!") {
+      return {
+        statusCode: 404,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": true
+        },
+        body: JSON.stringify({
+          message: "No results"
+        })
+      };
+    }
 
     const {
       data: {
-        values: [selectedRow]
+        values: [[timestamp, name, venmo, cash, employer]]
       }
     } = await sheets.spreadsheets.values.get({
       auth,
       spreadsheetId: SHEETS_SPREADSHEET_ID,
-      range: `A${randomRowIndex}:B${randomRowIndex}`
+      range: `'Form Responses 1'!A${randomRowIndex}:E${randomRowIndex}`
     });
+
+    const selectedRow = {
+      name,
+      venmo,
+      cash,
+      employer
+    };
 
     await new AWS.S3({ apiVersion: "2006-03-01" })
       .putObject({
@@ -92,15 +112,25 @@ async function getEmployee(event) {
 
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true
+      },
       body: JSON.stringify(selectedRow, null, 2)
     };
   }
 
   return {
     statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true
+    },
     body: existing.Body.toString()
   };
 }
+
+getEmployee();
 
 module.exports = {
   getEmployee
