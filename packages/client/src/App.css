@@ -13,8 +13,14 @@ html {
   text-align: center;
 }
 
-@media only screen and (min-width: 686px) {
+@media only screen and (min-width: 768px) {
   .support-footer {
     position: absolute;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section {
+    padding: 1rem 1rem;
   }
 }

@@ -13,6 +13,21 @@ provider:
         - s3:PutObject
         - s3:GetObject
       Resource: "arn:aws:s3:::avl-tips-employee/*"
+  usagePlan:
+    - free:
+        quota:
+          limit: 5000
+          period: MONTH
+        throttle:
+          burstLimit: 100
+          rateLimit: 100
+    - paid:
+        quota:
+          limit: 1000
+          period: MONTH
+        throttle:
+          burstLimit: 100
+          rateLimit: 100
 
 functions:
   getEmployee:
