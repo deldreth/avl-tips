@@ -21,6 +21,7 @@ functions:
       - http:
           path: employee
           method: get
+          cors: true
 
 resources:
   Resources:
