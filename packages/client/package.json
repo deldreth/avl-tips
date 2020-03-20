@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@avl-tips/components-react": "^0.0.1",
+    "@avl-tips/utils": "^0.0.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -13,8 +15,10 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
+    "prebuild": "mkdir -p ../../build",
     "start": "PORT=3000 HOST=localhost react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "cp -r ./build/* ../../build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

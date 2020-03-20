@@ -1,0 +1,29 @@
+{
+  "name": "@avl-tips/utils",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "author": "Devin Eldreth <devin.eldreth@gmail.com>",
+  "homepage": "https://github.com/deldreth/avl-tips#readme",
+  "license": "ISC",
+  "main": "lib/utils.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deldreth/avl-tips.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/deldreth/avl-tips/issues"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}

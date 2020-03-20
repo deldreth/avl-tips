@@ -1,8 +1,9 @@
 import React from "react";
 
-import Employee from "./Employee/Employee";
+import { getEmployee } from "@avl-tips/utils/lib/getEmployee";
+import { AvlTipsCard } from "@avl-tips/components-react";
+
 import Error from "./Error/Error";
-import api from "./utils/api/api";
 
 import "bulma/css/bulma.min.css";
 import "./App.css";
@@ -12,8 +13,7 @@ function App() {
   const [error, setError] = React.useState();
 
   React.useEffect(() => {
-    api
-      .get("/employee")
+    getEmployee()
       .then(response => setEmployee(response.data))
       .catch(responseError => setError(responseError));
   }, []);
@@ -57,7 +57,7 @@ function App() {
 
           <div className="columns is-centered">
             <div className="column is-two-thirds-desktop">
-              {employee && <Employee {...employee} />}
+              {employee && <AvlTipsCard {...employee} />}
 
               {error && <Error {...error} />}
             </div>

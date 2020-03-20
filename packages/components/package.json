@@ -1,0 +1,36 @@
+{
+  "name": "@avl-tips/components",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/components/components.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "prebuild": "mkdir -p ../../build/components",
+    "build": "stencil build --docs",
+    "postbuild": "cp -r ./dist/* ../../build/components",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@stencil/core": "^1.8.8"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@stencil/react-output-target": "^0.0.4",
+    "@stencil/sass": "^1.1.1",
+    "axios": "^0.19.2",
+    "bulma": "^0.8.0"
+  }
+}
