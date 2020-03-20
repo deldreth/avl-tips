@@ -15,7 +15,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "deploy": "serverless deploy"
+    "deploy:production": "serverless deploy --stage dev",
+    "deploy:staging": "serverless deploy --stage qa"
   },
   "dependencies": {
     "aws-sdk": "^2.641.0",
