@@ -1,8 +1,8 @@
 import React from "react";
-import axios from "axios";
 
 import Employee from "./Employee/Employee";
 import Error from "./Error/Error";
+import api from "./utils/api/api";
 
 import "bulma/css/bulma.min.css";
 import "./App.css";
@@ -12,10 +12,8 @@ function App() {
   const [error, setError] = React.useState();
 
   React.useEffect(() => {
-    axios
-      .get(
-        "https://yqzgbw1s1g.execute-api.us-east-1.amazonaws.com/dev/employee"
-      )
+    api
+      .get("/employee")
       .then(response => setEmployee(response.data))
       .catch(responseError => setError(responseError));
   }, []);
@@ -25,7 +23,7 @@ function App() {
       <section className="section">
         <div className="container">
           <div className="columns is-centered">
-            <div className="column is-mobile is-two-thirds-tablet is-half-desktop">
+            <div className="column is-two-thirds-desktop">
               <div className="card has-background-grey-dark has-text-light">
                 <div className="card-content">
                   <p className="title has-text-light is-size-6-mobile">
@@ -58,7 +56,7 @@ function App() {
           </div>
 
           <div className="columns is-centered">
-            <div className="column is-mobile is-two-thirds-tablet is-half-desktop">
+            <div className="column is-two-thirds-desktop">
               {employee && <Employee {...employee} />}
 
               {error && <Error {...error} />}

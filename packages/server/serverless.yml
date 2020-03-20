@@ -5,6 +5,7 @@ org: deldreth
 
 provider:
   name: aws
+  stage: ${opt:stage, 'qa'}
   runtime: nodejs12.x
   profile: default
   iamRoleStatements:
@@ -12,19 +13,15 @@ provider:
       Action:
         - s3:PutObject
         - s3:GetObject
-      Resource: "arn:aws:s3:::avl-tips-employee/*"
+      Resource: "arn:aws:s3:::${self:provider.environment.S3_BUCKET}/*"
+  environment:
+    S3_BUCKET: avl-tips-employee-${self:provider.stage}
   usagePlan:
     - free:
-        quota:
-          limit: 5000
-          period: MONTH
         throttle:
           burstLimit: 100
           rateLimit: 100
     - paid:
-        quota:
-          limit: 1000
-          period: MONTH
         throttle:
           burstLimit: 100
           rateLimit: 100
@@ -43,7 +40,7 @@ resources:
     EmployeeCacheBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: avl-tips-employee
+        BucketName: ${self:provider.environment.S3_BUCKET}
         CorsConfiguration:
           CorsRules:
             - AllowedOrigins:
