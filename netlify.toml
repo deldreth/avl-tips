@@ -1,0 +1,8 @@
+[build]
+  publish = "build"
+  command = "npm run build"
+
+[[headers]]
+  for = "/wc/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"

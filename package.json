@@ -5,6 +5,7 @@
     "lerna": "^3.16.4"
   },
   "scripts": {
-    "build": "lerna run build"
+    "prebuild": "lerna bootstrap",
+    "build": "lerna run build --stream"
   }
 }

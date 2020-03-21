@@ -1,6 +1,6 @@
 import React from "react";
 
-import Employee from "./Employee/Employee";
+import { AvlTipsCard } from "@avl-tips/components-react";
 import Error from "./Error/Error";
 import api from "./utils/api/api";
 
@@ -57,7 +57,7 @@ function App() {
 
           <div className="columns is-centered">
             <div className="column is-two-thirds-desktop">
-              {employee && <Employee {...employee} />}
+              {employee && <AvlTipsCard {...employee} />}
 
               {error && <Error {...error} />}
             </div>
