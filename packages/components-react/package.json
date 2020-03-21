@@ -13,7 +13,8 @@
     "clean": "rm -rf dist",
     "compile": "npm run tsc",
     "tsc": "tsc -p .",
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "start": "npm run tsc --watch"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",

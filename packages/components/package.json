@@ -18,7 +18,8 @@
     "prebuild": "mkdir -p ../../build/wc",
     "build": "stencil build --docs",
     "postbuild": "cp -r ./dist/* ../../build/wc",
-    "start": "stencil build --dev --watch --serve",
+    "start": "stencil build --watch",
+    "serve": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
