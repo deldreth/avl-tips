@@ -9,7 +9,8 @@
   },
   "scripts": {
     "prebuild": "lerna bootstrap",
-    "build": "lerna run build --stream"
+    "build": "lerna run build --stream",
+    "build:all": "npm run prebuild && npm run build"
   },
   "husky": {
     "hooks": {

@@ -1,8 +1,20 @@
 [build]
   publish = "build"
-  command = "npm run build"
+  command = "npm run build:all"
 
 [[headers]]
   for = "/wc/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
+
+[template.environment]
+  REACT_APP_CITY = "Your city"
+  REACT_APP_STATE = "(Optional) Your state"
+  REACT_APP_MAILTO = "Your email address for Questions and Data Privacy Inquiries"
+  REACT_APP_FORM_URL = "URL for google form"
+  REACT_APP_IMAGE_SRC = "URL for background image"
+  REACT_APP_IMAGE_ATTR_NAME = "Image attribution name"
+  REACT_APP_IMAGE_ATTR_URL = "Image attribution url for links"
+  REACT_APP_API_DEV_URL = "Development api base url"
+  REACT_APP_API_PROD_URL = "Production api base url"
+  REACT_APP_WC_TAG = "Web Component tag ex: avl-tips will produce <avl-tips/>"

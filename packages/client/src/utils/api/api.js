@@ -1,8 +1,9 @@
 import axios from "axios";
+import Config from "../../Config"
 
-let baseURL = "https://yqzgbw1s1g.execute-api.us-east-1.amazonaws.com/dev";
+let baseURL = Config.api.prod.url;
 if (process.env.NODE_ENV !== "production") {
-  baseURL = "https://65y0v85nve.execute-api.us-east-1.amazonaws.com/qa";
+  baseURL = Config.api.dev.url;
 }
 
 export default axios.create({
