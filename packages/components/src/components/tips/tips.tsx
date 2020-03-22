@@ -1,5 +1,6 @@
 import { Component, Host, State, h } from "@stencil/core";
 import axios from "axios";
+import config from "../../config"
 
 type Employee = {
   name: string;
@@ -20,7 +21,7 @@ export class Tips {
   componentWillLoad() {
     axios
       .get(
-        "https://yqzgbw1s1g.execute-api.us-east-1.amazonaws.com/dev/employee"
+        `${config.api.prod.url}/employee`
       )
       .then(response => (this.employee = response.data))
       .catch(() => (this.hasError = true));
