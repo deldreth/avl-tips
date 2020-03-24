@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`avl-tips matches snapshot 1`] = `
+<avl-tips>
+  <mock:shadow-root>
+    <avl-tips-card></avl-tips-card>
+  </mock:shadow-root>
+</avl-tips>
+`;

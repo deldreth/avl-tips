@@ -14,7 +14,6 @@
     "lib"
   ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
     "deploy:production": "serverless deploy --stage dev",
     "deploy:staging": "serverless deploy --stage qa"
   },

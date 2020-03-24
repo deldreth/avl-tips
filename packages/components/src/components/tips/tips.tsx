@@ -1,17 +1,18 @@
 import { Component, Host, State, h } from "@stencil/core";
 import axios from "axios";
-import config from "../../config"
+import config from "../../config";
 
 type Employee = {
   name: string;
   venmo: string;
   cash: string;
+  paypal: string;
   employer: string;
 };
 
 @Component({
   tag: "avl-tips",
-  styleUrl: "tips.css",
+  styleUrl: "tips.sass",
   shadow: true
 })
 export class Tips {
@@ -20,9 +21,7 @@ export class Tips {
 
   componentWillLoad() {
     axios
-      .get(
-        `${config.api.prod.url}/employee`
-      )
+      .get(`${config.api.prod.url}/employee`)
       .then(response => (this.employee = response.data))
       .catch(() => (this.hasError = true));
   }

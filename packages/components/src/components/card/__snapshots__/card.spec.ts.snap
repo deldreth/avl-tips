@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`avl-tips-card with all payment options matches snapshot 1`] = `
+<avl-tips-card cash="Cash" employer="Employer" name="Test Name" paypal="Paypal" venmo="Venmo">
+  <mock:shadow-root>
+    <div class="card employee">
+      <div class="card-content">
+        Support
+        <p class="title">
+          Test Name
+        </p>
+        <p class="subtitle">
+          <b>
+            Employer:
+          </b>
+          Employer
+        </p>
+        <div class="columns is-multiline">
+          <p class="column">
+            <a class="button is-flex is-info is-medium" href="https://venmo.com/enmo" rel="noreferrer noopener" target="_blank">
+              Venmo Venmo
+            </a>
+          </p>
+          <p class="column">
+            <a class="button is-flex is-medium is-success" href="https://cash.app/Cash" rel="noreferrer noopener" target="_blank">
+              Cash Cash
+            </a>
+          </p>
+          <p class="column">
+            <a class="button is-flex is-medium is-primary" href="https://paypal.me/Paypal" rel="noreferrer noopener" target="_blank">
+              PayPal.Me Paypal
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</avl-tips-card>
+`;
+
+exports[`avl-tips-card with cash matches snapshot 1`] = `
+<avl-tips-card cash="Cash" employer="Employer" name="Test Name">
+  <mock:shadow-root>
+    <div class="card employee">
+      <div class="card-content">
+        Support
+        <p class="title">
+          Test Name
+        </p>
+        <p class="subtitle">
+          <b>
+            Employer:
+          </b>
+          Employer
+        </p>
+        <div class="columns is-multiline">
+          <p class="column">
+            <a class="button is-flex is-medium is-success" href="https://cash.app/Cash" rel="noreferrer noopener" target="_blank">
+              Cash Cash
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</avl-tips-card>
+`;
+
+exports[`avl-tips-card with paypal matches snapshot 1`] = `
+<avl-tips-card employer="Employer" name="Test Name" paypal="Paypal">
+  <mock:shadow-root>
+    <div class="card employee">
+      <div class="card-content">
+        Support
+        <p class="title">
+          Test Name
+        </p>
+        <p class="subtitle">
+          <b>
+            Employer:
+          </b>
+          Employer
+        </p>
+        <div class="columns is-multiline">
+          <p class="column">
+            <a class="button is-flex is-medium is-primary" href="https://paypal.me/Paypal" rel="noreferrer noopener" target="_blank">
+              PayPal.Me Paypal
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</avl-tips-card>
+`;
+
+exports[`avl-tips-card with venmo matches snapshot 1`] = `
+<avl-tips-card employer="Employer" name="Test Name" venmo="Venmo">
+  <mock:shadow-root>
+    <div class="card employee">
+      <div class="card-content">
+        Support
+        <p class="title">
+          Test Name
+        </p>
+        <p class="subtitle">
+          <b>
+            Employer:
+          </b>
+          Employer
+        </p>
+        <div class="columns is-multiline">
+          <p class="column">
+            <a class="button is-flex is-info is-medium" href="https://venmo.com/enmo" rel="noreferrer noopener" target="_blank">
+              Venmo Venmo
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</avl-tips-card>
+`;
