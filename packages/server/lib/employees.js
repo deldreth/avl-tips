@@ -71,8 +71,6 @@ async function getEmployee(event) {
   }
 }
 
-getEmployee();
-
 module.exports = {
   getEmployee
 };

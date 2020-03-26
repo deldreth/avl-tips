@@ -15,12 +15,16 @@
   ],
   "scripts": {
     "deploy:production": "serverless deploy --stage dev",
-    "deploy:staging": "serverless deploy --stage qa"
+    "deploy:staging": "serverless deploy --stage qa",
+    "test": "jest"
   },
   "dependencies": {
     "aws-sdk": "^2.641.0",
-    "googleapis": "^48.0.0",
     "prettier": "^1.19.1",
     "serverless": "^1.66.0"
+  },
+  "devDependencies": {
+    "aws-sdk-mock": "^5.1.0",
+    "jest": "^25.2.0"
   }
 }
