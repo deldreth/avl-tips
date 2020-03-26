@@ -17,7 +17,6 @@
     "url": "git+https://github.com/deldreth/avl-tips.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
     "codemod": "run-s codemod:*",
     "codemod:client": "jscodeshift -t ./lib/client/import-component.js ../client/src",
     "codemod:components": "jscodeshift --parser=tsx -t ./lib/components/tags.js ../components/src --extensions=tsx",
