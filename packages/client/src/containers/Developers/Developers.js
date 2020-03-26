@@ -5,11 +5,11 @@ function Developers() {
     <>
       <section className="section">
         <div className="container">
-          {/* <div className="columns is-centered">
+          <div className="columns is-centered">
             <div className="column is-two-thirds-desktop">
               <div className="card">
                 <div className="card-content">
-                  <h1 className="title">Forking and Source Code</h1>
+                  <h1 className="title">Source</h1>
                   <h2 className="subtitle">
                     Create an Instance for Your Community
                   </h2>
@@ -29,7 +29,7 @@ function Developers() {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
 
           <div className="columns is-centered">
             <div className="column is-two-thirds-desktop">

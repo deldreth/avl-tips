@@ -16,7 +16,7 @@
   "scripts": {
     "deploy:production": "serverless deploy --stage dev",
     "deploy:staging": "serverless deploy --stage qa",
-    "test": "jest"
+    "test": "S3_BUCKET=test jest"
   },
   "dependencies": {
     "aws-sdk": "^2.641.0",
