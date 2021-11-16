@@ -19,7 +19,7 @@
     "test": "S3_BUCKET=test jest"
   },
   "dependencies": {
-    "aws-sdk": "^2.641.0",
+    "aws-sdk": "^2.814.0",
     "prettier": "^1.19.1",
     "serverless": "^1.66.0"
   },
