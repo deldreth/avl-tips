@@ -22,8 +22,3 @@
   REACT_APP_API_DEV_URL = "Development api base url"
   REACT_APP_API_PROD_URL = "Production api base url"
   REACT_APP_WC_TAG = "Web Component tag ex: avl-tips will produce <avl-tips/>"
-
-[[plugins]]
-  package = "netlify-plugin-cypress"
-  [plugins.inputs]
-    record = true
