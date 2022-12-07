@@ -21,7 +21,7 @@
   "dependencies": {
     "aws-sdk": "^2.641.0",
     "prettier": "^1.19.1",
-    "serverless": "^1.66.0"
+    "serverless": "^3.25.1"
   },
   "devDependencies": {
     "aws-sdk-mock": "^5.1.0",
